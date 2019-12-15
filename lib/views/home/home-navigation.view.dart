@@ -6,6 +6,37 @@ class HomeNavigation extends StatelessWidget {
     Key key,
   }) : super(key: key);
 
+  _showModalBottomSheet(context) {
+    showModalBottomSheet<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return Container(
+              child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 10.0),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text("Kesayanganmu"),
+                    FlatButton(
+                      onPressed: () {},
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                          side: BorderSide(color: Colors.green[500])),
+                      child: Text(
+                        "Back",
+                        style: TextStyle(color: Colors.green[500]),
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ));
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,6 +52,7 @@ class HomeNavigation extends StatelessWidget {
                     images: 'images/goride.png',
                     name: 'GoRide',
                     textStyle: TextStyle(color: Colors.black),
+                    function: () {},
                   ),
                   SizedBox(
                     height: 20,
@@ -29,6 +61,7 @@ class HomeNavigation extends StatelessWidget {
                     images: 'images/gosend.png',
                     name: 'GoSend',
                     textStyle: TextStyle(color: Colors.black),
+                    function: () {},
                   ),
                 ],
               ),
@@ -38,6 +71,7 @@ class HomeNavigation extends StatelessWidget {
                     images: 'images/gocar.png',
                     name: 'GoCar',
                     textStyle: TextStyle(color: Colors.black),
+                    function: () {},
                   ),
                   SizedBox(
                     height: 20,
@@ -46,6 +80,7 @@ class HomeNavigation extends StatelessWidget {
                     images: 'images/gopulsa.png',
                     name: 'GoPulsa',
                     textStyle: TextStyle(color: Colors.black),
+                    function: () {},
                   ),
                 ],
               ),
@@ -55,6 +90,7 @@ class HomeNavigation extends StatelessWidget {
                     images: 'images/gofood.png',
                     name: 'GoFood',
                     textStyle: TextStyle(color: Colors.black),
+                    function: () {},
                   ),
                   SizedBox(
                     height: 20,
@@ -63,6 +99,7 @@ class HomeNavigation extends StatelessWidget {
                     images: 'images/godeals.png',
                     name: 'GoDeals',
                     textStyle: TextStyle(color: Colors.black),
+                    function: () {},
                   ),
                 ],
               ),
@@ -72,15 +109,16 @@ class HomeNavigation extends StatelessWidget {
                     images: 'images/gobluebird.png',
                     name: 'GoBluebird',
                     textStyle: TextStyle(color: Colors.black),
+                    function: () {},
                   ),
                   SizedBox(
                     height: 20,
                   ),
                   MenuItem(
-                    images: 'images/more-1.png',
-                    name: 'Lainnya',
-                    textStyle: TextStyle(color: Colors.black),
-                  ),
+                      images: 'images/more-1.png',
+                      name: 'Lainnya',
+                      textStyle: TextStyle(color: Colors.black),
+                      function: () => _showModalBottomSheet(context))
                 ],
               )
             ],
